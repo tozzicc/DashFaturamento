@@ -235,3 +235,4 @@ MIT
 
 **Criado em:** Fevereiro de 2026  
 **Versão:** 1.0.0
+"# DashFaturamento" 
