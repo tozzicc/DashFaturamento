@@ -1,0 +1,73 @@
+.speedometer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+}
+
+.speedometer-container h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage-display {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.percentage-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: #4CAF50;
+  display: block;
+  text-align: center;
+}
+
+.speedometer-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.speedometer-info {
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 40px;
+}
+
+.speedometer-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.speedometer-info p strong {
+  color: #333;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .speedometer-container {
+    min-width: 100%;
+  }
+}
