@@ -10,6 +10,8 @@ interface SpeedometerProps {
   targetValue?: number;
   metaAcumulada?: number;
   color?: string;
+  centerAsCurrency?: boolean;
+  showCenter?: boolean;
 }
 
 const Speedometer: React.FC<SpeedometerProps> = ({

@@ -1,0 +1,80 @@
+/* Responsive grid and overrides for speedometer sizing inside snapshots view */
+.snapshots-root .speedometers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.snapshots-root .speedometer-container {
+  min-width: 0 !important;
+  flex: 1 1 240px !important;
+  padding: 12px !important;
+  max-width: 360px;
+  width: 100%;
+}
+
+.snapshots-root .speedometer-container h2 {
+  font-size: clamp(14px, 1.6vw, 20px) !important;
+}
+
+/* Make info panels wrap more compactly on small screens */
+.snapshots-root .info-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  max-width: 1200px;
+  margin: 12px auto;
+}
+
+/* Reduce gauge size and keep aspect ratio to avoid overlap */
+.snapshots-root .gauge-wrapper {
+  aspect-ratio: 1.2 / 1;
+  max-height: 260px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .snapshots-root .speedometers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .snapshots-root .speedometer-container {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .snapshots-root .speedometers-grid {
+    grid-template-columns: 1fr;
+  }
+  .snapshots-root .speedometer-container {
+    max-width: 100%;
+  }
+}
+
+/* Compact mode adjustments */
+.snapshot-viewer.compact .speedometers-grid {
+  gap: 10px;
+}
+.snapshot-viewer.compact .speedometer-container {
+  padding: 8px !important;
+  max-width: 300px;
+}
+.snapshot-viewer.compact .gauge-wrapper {
+  max-height: 180px;
+  aspect-ratio: 1.2 / 1;
+}
+.snapshot-viewer.compact .percentage-value {
+  font-size: clamp(14px, 2.4vw, 26px);
+}
+.snapshot-viewer.compact .info-panel {
+  display: none;
+}
+
+.snapshot-viewer.full .info-panel {
+  display: grid;
+}

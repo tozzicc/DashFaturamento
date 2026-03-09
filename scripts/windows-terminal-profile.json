@@ -1,0 +1,19 @@
+{
+  // Copie um ou ambos os objetos abaixo para dentro de "profiles" -> "list" em seu settings.json do Windows Terminal
+  "backend": {
+    "guid": "{b3f9a1d2-4c9a-4f7e-9b2b-1a2c3d4e5f60}",
+    "name": "DashFaturamento - Backend",
+    "commandline": "powershell -NoExit -NoProfile -Command \"cd \"c:\\DashFaturamento\\backend\"; npm run dev\"",
+    "startingDirectory": "c:\\DashFaturamento\\backend",
+    "icon": "%PROGRAMFILES%\\WindowsApps\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\Images\\terminal.png",
+    "hidden": false
+  },
+  "frontend": {
+    "guid": "{d4e2b6c7-7f8a-4b1c-a2d3-6e7f8a9b0c11}",
+    "name": "DashFaturamento - Frontend",
+    "commandline": "powershell -NoExit -NoProfile -Command \"cd \"c:\\DashFaturamento\\frontend\"; npm run dev\"",
+    "startingDirectory": "c:\\DashFaturamento\\frontend",
+    "icon": "%PROGRAMFILES%\\WindowsApps\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\Images\\terminal.png",
+    "hidden": false
+  }
+}

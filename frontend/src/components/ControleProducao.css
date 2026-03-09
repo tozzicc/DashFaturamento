@@ -1,0 +1,6 @@
+.controle-container { padding: 12px; }
+.table-wrap { overflow: auto; max-width: 100%; }
+.controle-table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.controle-table th, .controle-table td { border: 1px solid #ddd; padding: 6px 8px; }
+.controle-table th { background: #f4f4f4; position: sticky; top: 0; z-index: 2; }
+.controle-table tr:nth-child(even) { background: #fbfbfb; }
