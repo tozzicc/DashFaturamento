@@ -128,9 +128,9 @@ const DashboardContent: React.FC<{ data: FaturamentoData }> = ({ data }) => {
             <span className="value">
               {data.envio_tratador
                 ? calculatePercentage(
-                    data.envio_tratador.dia.total_trat_dia,
-                    data.envio_tratador.dia.meta_dia
-                  ).toFixed(1) + '%'
+                  data.envio_tratador.dia.total_trat_dia,
+                  data.envio_tratador.dia.meta_dia
+                ).toFixed(1) + '%'
                 : '-'}
             </span>
           </div>
@@ -159,9 +159,9 @@ const DashboardContent: React.FC<{ data: FaturamentoData }> = ({ data }) => {
             <span className="value">
               {data.envio_tratador
                 ? formatCurrency(
-                    data.envio_tratador.mes.fat_total -
-                      data.envio_tratador.mes.meta_acumulada_mes
-                  )
+                  data.envio_tratador.mes.fat_total -
+                  data.envio_tratador.mes.meta_acumulada_mes
+                )
                 : '-'}
             </span>
           </div>
@@ -186,7 +186,8 @@ const App: React.FC = () => {
   });
 
   const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
-  const SOCKET_URL = `http://${window.location.hostname}:3000`;
+  // Usa a mesma variável de ambiente para o Socket, removendo o hardcode que causa erro na Vercel
+  const SOCKET_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3000`;
 
   useEffect(() => {
     // carregar histórico do localStorage
@@ -302,7 +303,7 @@ const App: React.FC = () => {
       // Verifica se já existe entrada para hoje
       const existingIndex = prev.findIndex(entry => entry.date === today);
       let updated;
-      
+
       if (existingIndex >= 0) {
         // Atualiza a entrada existente com os novos dados
         updated = [...prev];
@@ -311,7 +312,7 @@ const App: React.FC = () => {
         // Cria nova entrada
         updated = [...prev, { date: today, data: newData }];
       }
-      
+
       localStorage.setItem('faturamento_history', JSON.stringify(updated));
       return updated;
     });
